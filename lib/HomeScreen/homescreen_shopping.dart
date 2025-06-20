@@ -13,7 +13,8 @@ class _HomeScreen1State extends State<HomeScreen1> {
     return Scaffold(
       body: Expanded(
         flex: 1,
-          child: Image.asset('assets/shop.png',fit: BoxFit.cover,)),
+          child:
+          Image.asset('assets/shop.png',fit: BoxFit.contain,)),
      );
   }
 }

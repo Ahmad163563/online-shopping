@@ -11,9 +11,9 @@ class _HomeScreen1State extends State<HomeScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-      ),
+      body: Expanded(
+        flex: 1,
+          child: Image(image: AssetImage('lib/assets.png'))),
      );
   }
 }

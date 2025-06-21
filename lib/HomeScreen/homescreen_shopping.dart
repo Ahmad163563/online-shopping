@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/HomeScreen/Home_Page.dart';
 
 class HomeScreen1 extends StatefulWidget {
   const HomeScreen1({super.key});
@@ -33,7 +34,9 @@ class _HomeScreen1State extends State<HomeScreen1> {
                   fontWeight: FontWeight.w400
                 ),),
                 SizedBox(height: 10,),
-                TextButton(onPressed: (){}, child: Container(
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                }, child: Container(
                   height: 48,
                   width: 219,
                   decoration: BoxDecoration(

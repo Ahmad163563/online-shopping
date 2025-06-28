@@ -12,10 +12,13 @@ class _Page1screenState extends State<Page1screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Row(
           children: [
             Icon(Icons.merge_type_rounded,color: Colors.red,),
-            Text('FORSTR',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+            SizedBox(width: 10,),
+            Text('FORSTR',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+            Text('Home',style: TextStyle(fontWeight: FontWeight.w100),)
           ],
         ),
       ),

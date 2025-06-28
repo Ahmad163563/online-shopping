@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping/HomeScreen/homescreen_shopping.dart';
+import 'package:shopping/webscreen.dart';
 
 import 'firebase_options.dart';
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen1()//const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: WebScreen()//HomeScreen1()//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

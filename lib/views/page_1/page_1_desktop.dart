@@ -62,7 +62,9 @@ class _Page1screenState extends State<Page1screen> {
                 SizedBox(width: 100,),
                 Text('Ahmad',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 100),),
                 SizedBox(width: 30,),
-                Text('Yar',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 100))
+                Text('Yar',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 100)),
+                SizedBox(width: 220,),
+                Container(height:200,width: 430,child: Image.asset('assets/click in lake.jpg'),)
               ],
             ),
             SizedBox(height: 7,),
@@ -87,14 +89,14 @@ class _Page1screenState extends State<Page1screen> {
                 SizedBox(width: 95,),
                 Text(''
                 'FIND ME ON',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)]),
-                SizedBox(height: 10,),
+                SizedBox(height: 30,),
                 Row(
                   children: [
                     SizedBox(width: 80,),
-                    Container(height: 20,width: 50,color: Colors.black,child:Image.asset('assets/fb.jpg',color: Colors.black,),),
-                    Container(height: 20,width: 50,color: Colors.black,child:Image.asset('assets/twitter.png',color: Colors.white,),),
-                    Container(height: 20,width: 50,color: Colors.black,child:Image.asset('assets/linkdein.png',color: Colors.white,),),
-                    Container(height: 20,width: 50,color: Colors.black,child:Image.asset('assets/utube.png',color: Colors.white,),)
+                    Container(height: 20,width: 50,child:Image.asset('assets/fb.jpg'),),
+                    Container(height: 20,width: 50,child:Image.asset('assets/twitter.png'),),
+                    Container(height: 20,width: 50,child:Image.asset('assets/linkdein.png'),),
+                    Container(height: 20,width: 50,child:Image.asset('assets/utube.png'),)
                   ],
                 )        
             

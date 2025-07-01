@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/media_screen.dart';
 
 import 'package:shopping/views/main_screen.dart';
 import 'package:shopping/views/page_1/page_1_desktop.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Page1screen()//Mainscreen()//HomeScreen1()//const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MediaScreen()//Page1screen()//Mainscreen()//HomeScreen1()//const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

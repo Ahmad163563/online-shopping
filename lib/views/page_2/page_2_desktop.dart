@@ -14,7 +14,7 @@ class _Page2desktopState extends State<Page2desktop> {
       body: Column(
         children: [
           Text('My Service'),
-          T
+
         ],
       ),
     );

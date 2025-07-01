@@ -16,6 +16,7 @@ class _MediaScreenState extends State<MediaScreen> {
           Row(
             children: [
               Container(
+                color: Colors.red,
                 height: 50,
                 width: MediaQuery.of(context).size.width*0.33,
               )

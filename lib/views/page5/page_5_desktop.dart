@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/controller/text_component/text_component.dart';
 
 class Page5Desktop extends StatelessWidget {
   const Page5Desktop({super.key});
@@ -12,35 +13,28 @@ class Page5Desktop extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "TESTIMONIALS",
-              style: TextStyle(
-                color: Colors.redAccent,
-                fontSize: 13,
-                letterSpacing: 2,
-              ),
-            ),
+            CustomText(label: 'TESTIMONIALS', size: TextSize.small, weight: FontWeight.w100,color: Colors.redAccent,),
             SizedBox(height: 10),
              Row(
                children: [
-                 Text(
-                  "What Clients Say",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
-                 ),
+                 CustomText(label: 'What Clients Say', size: TextSize.large, weight: FontWeight.bold,color: Colors.white,),
                  Spacer(),
                  Container(
-                   color: Colors.grey,
+                   height: 40,
+                   width: 50,
+                   color: Color(0xFF1E1E1E),
+                   child: Icon(Icons.arrow_back,color: Colors.white,),
+                 ),
+                 SizedBox(width: 12,),
+                 Container(
+                   height: 40,
+                   width: 50,
+                   color: Color(0xFF1E1E1E),
                    child: Icon(Icons.arrow_forward,color: Colors.white,),
                  )
                ],
              ),
              SizedBox(height: 40),
-
-            // Testimonials Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -102,30 +96,19 @@ class TestimonialCard extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          const Text(
-            "Aliquam cursus nunc mauris, nec congue tortor pretium et. Pellentesque feugiat justo in metus laoreet.",
-            style: TextStyle(color: Colors.white70, fontSize: 14),
-          ),
-
-          const SizedBox(height: 20),
-
-          // Client info
+          CustomText(label: 'Aliquam cursus nunc mauris, nec congue tortor pretium et. Pellentesque feugiat justo in metus laoreet.', size: TextSize.small, weight: FontWeight.w100,color: Colors.white70,),
+          SizedBox(height: 20),
           Row(
             children: [
-              const CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://i.pravatar.cc/100?img=7'), // sample avatar
+               CircleAvatar(
+                backgroundImage: AssetImage('assets/click in lake.jpg'),
                 radius: 20,
               ),
-              const SizedBox(width: 10),
+               SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text("Sam Freeman",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14)),
+                children: [
+                  CustomText(label: 'Sam Freeman', size: TextSize.small, weight: FontWeight.bold,color: Colors.white,),
                   Text("Business Manager And CEO",
                       style: TextStyle(color: Colors.white60, fontSize: 12)),
                 ],

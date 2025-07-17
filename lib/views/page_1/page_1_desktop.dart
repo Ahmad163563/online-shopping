@@ -1,109 +1,155 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/controller/text_component/text_component.dart';
 
-class Page1screen extends StatefulWidget {
-  const Page1screen({super.key});
-
-  @override
-  State<Page1screen> createState() => _Page1screenState();
-}
-
-class _Page1screenState extends State<Page1screen> {
+class Page1Desktop extends StatelessWidget {
+   Page1Desktop({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body:  SingleChildScrollView(
-        child: Column(
-          children:[
-            SizedBox(height: 30,),
-            Row(
+      backgroundColor: const Color(0xFF121212),
+      body: Column(
+        children: [
+          // NAVBAR
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SizedBox(width: 100,),
-                Icon(Icons.merge_type_rounded,color: Colors.red,),
-                SizedBox(width: 10,),
-                Text('FORSTR',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
-                SizedBox(width: 180,),
-                Text('HOME',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white),),
-                SizedBox(width: 50,),
-                Text('SERVICE',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white),),
-                SizedBox(width: 50,),
-                Text('PORTFOLIO',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white),),
-                SizedBox(width: 50,),
-                Text('RESUME',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white),),
-                SizedBox(width: 50,),
-                Text('CONTACT',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white),),
-                SizedBox(width: 150,),
-                Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(),
-                    color: Colors.red
-                  ),
-                  child: Center(child: Text('DOWNLOAD CV',style: TextStyle(color: Colors.white,fontWeight: FontWeight.normal),)),
-                ),
-        
-              ],
-            ),
-            SizedBox(height: 50,),
-            Row(
-              children: [
-                SizedBox(width: 100,),
-                Text('Hello, ',style:  TextStyle(fontWeight: FontWeight.normal,color: Colors.white,fontSize: 50),),
-                SizedBox(width: 7,),
-                Text('I^m',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.red,fontSize: 50),)
-              ],
-            ),
-            SizedBox(height: 10,),
-            Row(
-              children: [
-                SizedBox(width: 100,),
-                Text('Ahmad',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 100),),
-                SizedBox(width: 30,),
-                Text('Yar',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 100)),
-                SizedBox(width: 220,),
-                Container(height:200,width: 430,child: Image.asset('assets/click in lake.jpg'),)
-              ],
-            ),
-            SizedBox(height: 7,),
-            Row(
-              children: [
-                SizedBox(width: 100,),
-                Text('APP Designer And APP Developer ',style: TextStyle(fontWeight: FontWeight.normal,color: Colors.white,fontSize: 50),)
-              ],
-            ),
-            SizedBox(height: 3,),
-            Row(
-              children: [
-                SizedBox(width: 95,),
-                Text('I am a passionate and results-driven Flutter Developer with a strong focus on building high-performance, responsive, \n and visually appealing cross-platform mobile applications.\n With a solid understanding of Dart and Flutter’s widget-based architect'
-                    'ure, I specialize in crafting clean UI designs,\n implementing efficient state management, and o'
-                    'ptimizing performance across Android, web, and deskt'
-                    'op platforms.',style: TextStyle(color: Colors.white,fontSize: 20),)
-              ],
-            ),
-              SizedBox(height: 23,),
-              Row(children:[
-                SizedBox(width: 95,),
-                Text(''
-                'FIND ME ON',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)]),
-                SizedBox(height: 30,),
+                CustomText(label: 'FORSTR', weight: FontWeight.bold, size: TextSize.medium, color: Colors.red,),
                 Row(
-                  children: [
-                    SizedBox(width: 80,),
-                    Container(height: 20,width: 50,child:Image.asset('assets/fb.jpg'),),
-                    Container(height: 20,width: 50,child:Image.asset('assets/twitter.png'),),
-                    Container(height: 20,width: 50,child:Image.asset('assets/linkdein.png'),),
-                    Container(height: 20,width: 50,child:Image.asset('assets/utube.png'),)
-                  ],
-                )        
-            
-            ]
-        ),
-      ),
-      );
+                  children: ["HOME", "SERVICES", "PORTFOLIO", "RESUME", "CONTACT"]
+                      .map((item) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: CustomText(label: item, weight: FontWeight.w400,color: Colors.white,size: TextSize.small,)
+                  ))
+                      .toList(),
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: CustomText(label: 'Download CV', size: TextSize.small, weight: FontWeight.w100,color: Colors.white,)
+                )
+              ],
+            ),
+          ),
 
+          // HERO SECTION
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              child: Row(
+                children: [
+                  // LEFT SIDE
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(label: "Hello I'm", size: TextSize.medium, weight: FontWeight.w300,color: Colors.white,),
+                           SizedBox(height: 8),
+                           CustomText(label: 'Kthan Foster', size: TextSize.extralarge, weight: FontWeight.bold,color: Colors.white,),
+                           SizedBox(height: 10),
+                           CustomText(label: 'Web Designer And Web Developer', size: TextSize.medium, weight: FontWeight.w500,color: Colors.grey,),
+                           SizedBox(height: 20),
+                           CustomText(label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                           "Massa porttitor pretium\n"
+                               "fusce venenatis. Tempus egostes sit ac aliquet. Gravida fermentum quis ut\n"
+                               "pellentus queporta facios aliquet. Sed torpur sendis", size: TextSize.small, weight: FontWeight.w100,color: Colors.white60,),
+                          SizedBox(height: 20,),
+
+                          CustomText(label: 'Find me on', size: TextSize.medium, weight: FontWeight.w400,color: Colors.white,),
+                           SizedBox(height: 20),
+                          Row(
+                            children:[
+                              Container(
+                                height: 50,
+                                width: 50,
+                                color: Colors.black,
+                                child: Image.asset('assets/fb.jpg'),
+                              ),
+                              SizedBox(width: 15),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                color: Colors.black,
+                                child: Image.asset('assets/twitter.png',),
+                              ),
+                              SizedBox(width: 15),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                color: Colors.black,
+                                child: Image.asset('assets/linkdein.png',),
+                              ),
+                              SizedBox(width: 15),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                color: Colors.black,
+                                child: Image.asset('assets/utube.png',),
+                              )
+                            ],
+                          ),
+                           SizedBox(height: 55),
+                          Row(
+                            children: const [
+                              StatBox(number: "20+", label: "Years of Experience"),
+                              SizedBox(width: 20),
+                              StatBox(number: "700+", label: "Global Clients"),
+                              SizedBox(width: 20),
+                              StatBox(number: "30+", label: "Awards Won"),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  // RIGHT SIDE - IMAGE
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 40),
+                      child: Image.asset(
+                        'assets/amd.jpg',height: 400,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+class StatBox extends StatelessWidget {
+  final String number;
+  final String label;
+
+  const StatBox({super.key, required this.number, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(number,
+            style: const TextStyle(
+                color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold)),
+        Text(label, style: const TextStyle(color: Colors.white70)),
+      ],
+    );
   }
 }

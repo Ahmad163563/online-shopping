@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping/controller/text_component/text_component.dart';
 
 class Page1Desktop extends StatelessWidget {
@@ -21,7 +22,24 @@ class Page1Desktop extends StatelessWidget {
                   children: ["HOME", "SERVICES", "PORTFOLIO", "RESUME", "CONTACT"]
                       .map((item) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: CustomText(label: item, weight: FontWeight.w400,color: Colors.white,size: TextSize.small,)
+                    child: GestureDetector(
+                        onTap: (){
+                          if(item=="SERVICES"){
+                            context.go('/pg2');
+                          }
+                        },
+                        child: GestureDetector(
+                            onTap: (){
+                              if(item=="RESUME"){
+                                context.go('/pg4');
+                              }
+                            },
+                            child: GestureDetector(
+                                onTap: (){
+                                  if(item=="CONTACT");
+                                  context.go('/pg7');
+                                },
+                                child: CustomText(label: item, weight: FontWeight.w400,color: Colors.white,size: TextSize.small,))))
                   ))
                       .toList(),
                 ),
@@ -101,12 +119,20 @@ class Page1Desktop extends StatelessWidget {
                           ),
                            SizedBox(height: 55),
                           Row(
-                            children: const [
+                            children: [
                               StatBox(number: "20+", label: "Years of Experience"),
                               SizedBox(width: 20),
-                              StatBox(number: "700+", label: "Global Clients"),
+                              GestureDetector(
+                                  onTap: (){
+                                    context.go('/pg5');
+                                  },
+                                  child: StatBox(number: "700+", label: "Global Clients")),
                               SizedBox(width: 20),
-                              StatBox(number: "30+", label: "Awards Won"),
+                              GestureDetector(
+                                  onTap: () {
+                                    context.go('/pg3');
+                                  },
+                                  child: StatBox(number: "30+", label: "Awards Won")),
                             ],
                           )
                         ],
@@ -120,7 +146,7 @@ class Page1Desktop extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 40),
                       child: Image.asset(
-                        'assets/amd.jpg',height: 400,
+                        'assets/cartoon.jpg',height: 400,
                         fit: BoxFit.contain,
                       ),
                     ),

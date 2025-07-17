@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shopping/controller/text_component/text_component.dart';
 
 class Page5Desktop extends StatelessWidget {
@@ -69,53 +70,58 @@ class TestimonialCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Quote + Rating
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Icon(Icons.format_quote, color: Colors.pinkAccent, size: 30),
-              Row(
-                children: [
-                  Icon(Icons.star, color: Colors.amber, size: 20),
-                  Icon(Icons.star, color: Colors.amber, size: 20),
-                  Icon(Icons.star, color: Colors.amber, size: 20),
-                  Icon(Icons.star, color: Colors.amber, size: 20),
-                  Icon(Icons.star, color: Colors.amber, size: 20),
-                ],
-              )
-            ],
-          ),
-          const SizedBox(height: 20),
+    return GestureDetector(
+      onTap: (){
+        context.go('/pg6');
+      },
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: const Color(0xFF1E1E1E),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Quote + Rating
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                Icon(Icons.format_quote, color: Colors.pinkAccent, size: 30),
+                Row(
+                  children: [
+                    Icon(Icons.star, color: Colors.amber, size: 20),
+                    Icon(Icons.star, color: Colors.amber, size: 20),
+                    Icon(Icons.star, color: Colors.amber, size: 20),
+                    Icon(Icons.star, color: Colors.amber, size: 20),
+                    Icon(Icons.star, color: Colors.amber, size: 20),
+                  ],
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
 
-          CustomText(label: 'Aliquam cursus nunc mauris, nec congue tortor pretium et. Pellentesque feugiat justo in metus laoreet.', size: TextSize.small, weight: FontWeight.w100,color: Colors.white70,),
-          SizedBox(height: 20),
-          Row(
-            children: [
-               CircleAvatar(
-                backgroundImage: AssetImage('assets/click in lake.jpg'),
-                radius: 20,
-              ),
-               SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomText(label: 'Sam Freeman', size: TextSize.small, weight: FontWeight.bold,color: Colors.white,),
-                  Text("Business Manager And CEO",
-                      style: TextStyle(color: Colors.white60, fontSize: 12)),
-                ],
-              )
-            ],
-          )
-        ],
+            CustomText(label: 'Aliquam cursus nunc mauris, nec congue tortor pretium et. Pellentesque feugiat justo in metus laoreet.', size: TextSize.small, weight: FontWeight.w100,color: Colors.white70,),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                 CircleAvatar(
+                  backgroundImage: AssetImage('assets/click in lake.jpg'),
+                  radius: 20,
+                ),
+                 SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomText(label: 'Sam Freeman', size: TextSize.small, weight: FontWeight.bold,color: Colors.white,),
+                    Text("Business Manager And CEO",
+                        style: TextStyle(color: Colors.white60, fontSize: 12)),
+                  ],
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

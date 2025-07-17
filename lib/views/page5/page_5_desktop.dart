@@ -12,8 +12,7 @@ class Page5Desktop extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Heading
-            const Text(
+            Text(
               "TESTIMONIALS",
               style: TextStyle(
                 color: Colors.redAccent,
@@ -21,21 +20,30 @@ class Page5Desktop extends StatelessWidget {
                 letterSpacing: 2,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
-              "What Clients Say",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 40),
+            SizedBox(height: 10),
+             Row(
+               children: [
+                 Text(
+                  "What Clients Say",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                 ),
+                 Spacer(),
+                 Container(
+                   color: Colors.grey,
+                   child: Icon(Icons.arrow_forward,color: Colors.white,),
+                 )
+               ],
+             ),
+             SizedBox(height: 40),
 
             // Testimonials Row
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Expanded(child: TestimonialCard()),
                 SizedBox(width: 20),
                 Expanded(child: TestimonialCard()),
@@ -44,14 +52,13 @@ class Page5Desktop extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 30),
-
-            // Pagination dots (static for now)
+            SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Dot(isActive: true),
                 Dot(),
+                Dot(),
+                Dot(isActive: true,),
                 Dot(),
                 Dot(),
               ],

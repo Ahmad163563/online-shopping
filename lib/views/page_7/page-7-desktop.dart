@@ -7,7 +7,6 @@ class Page7Desktop extends StatelessWidget {
     border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
     hintStyle: TextStyle(color: Colors.white70),
   );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

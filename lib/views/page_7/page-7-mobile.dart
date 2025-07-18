@@ -1,110 +1,122 @@
 import 'package:flutter/material.dart';
 
-class Page6Mobile extends StatelessWidget {
-  const Page6Mobile({super.key});
+class Page7Mobile extends StatelessWidget {
+  final _inputDecoration = InputDecoration(
+    filled: true,
+    fillColor: Colors.black54,
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+    hintStyle: const TextStyle(color: Colors.white70),
+  );
+
+  Page7Mobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
+      backgroundColor: Colors.black87,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Heading
-            const Text(
-              "BEST CUSTOMERS",
-              style: TextStyle(
-                color: Colors.redAccent,
-                fontSize: 12,
-                letterSpacing: 2,
-              ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              "Selected Clients",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+            // Contact Info Boxes
+            GridView.count(
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 2.8,
+              children: [
+                contactBox(Icons.map_outlined, "382 Waldo Ave SE\nSalem, Oregon"),
+                contactBox(Icons.phone, "932-415-832-938"),
+                contactBox(Icons.email, "animal@example.com"),
+                contactBox(Icons.check_circle, "Freelance Available"),
+              ],
             ),
             const SizedBox(height: 30),
 
-            // Grid of logos (2 columns for mobile)
-            GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              childAspectRatio: 2.7,
-              children: const [
-                ClientLogoCard(imagePath: 'assets/circle.jpeg', text: 'goldline'),
-                ClientLogoCard(imagePath: 'assets/ball.webp', text: 'Venture'),
-                ClientLogoCard(imagePath: 'assets/ciiiircle.png', text: 'Circle'),
-                ClientLogoCard(imagePath: 'assets/nine.jpg', text: 'Velocity'),
-                ClientLogoCard(imagePath: '', text: 'Utosia'),
-                ClientLogoCard(imagePath: '', text: 'Ztos'),
-                ClientLogoCard(imagePath: 'assets/vertical.png', text: 'Asgardia'),
-                ClientLogoCard(imagePath: 'assets/rocket.jpg', text: 'Treva'),
-              ],
+            const Text(
+              "Contact With Me",
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // Name and Phone
+            TextField(
+              decoration: _inputDecoration.copyWith(hintText: "Enter Your Name"),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 15),
+            TextField(
+              decoration: _inputDecoration.copyWith(hintText: "Enter Your Phone"),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 15),
+
+            // Email and Subject
+            TextField(
+              decoration: _inputDecoration.copyWith(hintText: "Enter Your Email"),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 15),
+            TextField(
+              decoration: _inputDecoration.copyWith(hintText: "Enter Your Subject"),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 15),
+
+            // Message
+            TextField(
+              maxLines: 6,
+              decoration: _inputDecoration.copyWith(hintText: "Type Your Message"),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 20),
+
+            // Send Button
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.send),
+                label: const Text("Send Message"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[800],
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
   }
-}
 
-class ClientLogoCard extends StatelessWidget {
-  final String text;
-  final String imagePath;
-
-  const ClientLogoCard({
-    super.key,
-    required this.text,
-    required this.imagePath,
-  });
-
-  @override
-  Widget build(BuildContext context) {
+  Widget contactBox(IconData icon, String text) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E1E1E),
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.15),
-            blurRadius: 4,
-            offset: const Offset(0, 2),
-          ),
-        ],
+        color: Colors.grey[850],
+        borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (imagePath.isNotEmpty) ...[
-            Image.asset(
-              imagePath,
-              height: 28,
-              width: 28,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(width: 8),
-          ],
-          Flexible(
-            child: Text(
-              text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
+          Icon(icon, color: Colors.redAccent, size: 30),
+          const SizedBox(height: 6),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white70, fontSize: 12),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

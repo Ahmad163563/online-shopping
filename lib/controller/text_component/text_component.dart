@@ -25,15 +25,15 @@ class CustomText extends StatelessWidget {
     if (isMobile) {
       switch (size) {
         case TextSize.minismall:
-          return 12;
+          return 9;
         case TextSize.small:
-          return 14;
+          return 12;
         case TextSize.medium:
-          return 16;
+          return 14;
         case TextSize.large:
-          return 18;
+          return 16;
         case TextSize.extralarge:
-          return 20;
+          return 18;
       }
     } else if (isDesktop) {
       switch (size) {

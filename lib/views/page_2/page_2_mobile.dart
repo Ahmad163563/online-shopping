@@ -31,10 +31,10 @@ class Page2Mobile extends StatelessWidget {
 
               // Service Cards in Grid or List
               GridView.count(
-                crossAxisCount: 1, // Single column for mobile
+                crossAxisCount: 1,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
-                childAspectRatio: 2.5,
+                childAspectRatio: 3,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: const [

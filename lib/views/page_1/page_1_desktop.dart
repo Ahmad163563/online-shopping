@@ -8,10 +8,9 @@ class Page1Desktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF121212),
+      backgroundColor: Color(0xFF121212),
       body: Column(
         children: [
-          // NAVBAR
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             child: Row(
@@ -56,8 +55,6 @@ class Page1Desktop extends StatelessWidget {
               ],
             ),
           ),
-
-          // HERO SECTION
           Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -139,8 +136,6 @@ class Page1Desktop extends StatelessWidget {
                       ),
                     ),
                   ),
-
-                  // RIGHT SIDE - IMAGE
                   Expanded(
                     flex: 1,
                     child: Padding(
